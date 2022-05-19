@@ -2,36 +2,40 @@
 using System.Diagnostics;
 using System.Linq;
 using Terranova.API;
+using WECProcessManager.resources;
 
-namespace ProcessManager
+namespace WECProcessManager
 {
+    /// <summary>
+    /// Main class which implements the main console user interface.
+    /// </summary>
     class Program
     {
-        private const string MANUAL = "********************************************************\n" +
-                                      "*                PROCESS MANAGER v1.0.0                *\n" +
-                                      "*                                                      *\n" +
-                                      "* MAN            Launches this manual.                 *\n" +
-                                      "* LIST           Lists all active processes.           *\n" +
-                                      "* KILL -n <name> Kills a process by its <name>.        *\n" +
-                                      "* KILL -p <pid>  Kills a process by its <pid>.         *\n" +
-                                      "* START <path>   Starts a process by its <path>.       *\n" +
-                                      "* QUIT           Quits the application.                *\n" +
-                                      "********************************************************";
-
+        private static readonly string TITLE = Constants.APP_NAME + " " + Constants.VERSION_PREFIX + 
+                                               Constants.VERSION_NUMBER + Constants.VERSION_POSTFIX;
+        private static readonly string MANUAL = "********************************************************\n" + 
+                                                "*              " + TITLE + "              *\n" + 
+                                                "*                                                      *\n" + 
+                                                "* MAN            Launches this manual.                 *\n" + 
+                                                "* LIST           Lists all active processes.           *\n" + 
+                                                "* KILL -n <name> Kills a process by its <name>.        *\n" + 
+                                                "* KILL -p <pid>  Kills a process by its <pid>.         *\n" + 
+                                                "* START <path>   Starts a process by its <path>.       *\n" + 
+                                                "* QUIT           Quits the application.                *\n" + 
+                                                "********************************************************";
         private const string PROCESSES_TABLE_HEADER = "PID\t\tThread Count\tName\n";
 
-        //TODO DOCUMENTATION
         /// <summary>
-        /// 
+        /// Prints the manual to the console.
         /// </summary>
         private static void ManualCommand()
         {
             Console.WriteLine(MANUAL);
         }
 
-        //TODO DOCUMENTATION
         /// <summary>
-        /// 
+        /// Lists all currently active processes to the console in a table.
+        /// Each row contains the full program path, pid and thread count.
         /// </summary>
         private static void ListProcessesCommand()
         {
@@ -50,10 +54,10 @@ namespace ProcessManager
             }
         }
 
-        //TODO DOCUMENTATION
         /// <summary>
-        /// 
+        /// Kills a process by either its pid or full path.
         /// </summary>
+        /// <param name="arguments">string array containing all arguments for the command.</param>
         private static void KillProcessCommand(string[] arguments)
         {
             ProcessInfo[] processes = ProcessCE.GetProcesses();
@@ -85,13 +89,11 @@ namespace ProcessManager
             }
         }
 
-        //TODO DOCUMENTATION
-        //TODO TEST
-        //TODO IMPLEMENT
         /// <summary>
-        /// 
+        /// Starts a process by name.
         /// </summary>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">string array containing all arguments for the command.
+        ///                         Typically the full path to the process to start.</param>
         private static void StartCommand(string path)
         {
             Process process = new Process();
@@ -100,11 +102,11 @@ namespace ProcessManager
             Console.WriteLine("Started: " + path);
         }
 
-        //TODO DOCUMENTATION
         /// <summary>
-        /// 
+        /// Quits the console application after confirmation.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Boolean indicating whether or not the user has confirmed they still
+        ///          wish to quit the application.</returns>
         private static bool QuitCommand()
         {
             string decision = "start";
@@ -129,22 +131,18 @@ namespace ProcessManager
             return decision.ToLower().Equals("y");
         }
 
-        //TODO DOCUMENTATION
-        //TODO TEST
         /// <summary>
-        /// 
+        /// Simply prints invalid command to the console.
         /// </summary>
         private static void UnknownCommand()
         {
             Console.WriteLine("Invalid command!");
         }
 
-        //TODO DOCUMENTATION
-        //TODO IMPLEMENT
         /// <summary>
-        /// 
+        /// Main method.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args">Program arguments. No program arguments are handled.</param>
         public static void Main(string[] args)
         {
             Console.WriteLine(MANUAL);
