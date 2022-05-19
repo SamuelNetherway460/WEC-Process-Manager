@@ -1,0 +1,9 @@
+WEC Process Manager v1.0.0 Release Notes
+
+Notes:
+- Initial release.
+
+Features:
+- List processes with their full path, pid and thread count.
+- Kill processes by full path or pid.
+- Start processes by full path.
