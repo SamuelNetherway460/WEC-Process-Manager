@@ -18,7 +18,7 @@ namespace WECProcessManager
                                                 "*                                                      *\n" + 
                                                 "* MAN            Launches this manual.                 *\n" + 
                                                 "* LIST           Lists all active processes.           *\n" + 
-                                                "* KILL -n <name> Kills a process by its <name>.        *\n" + 
+                                                "* KILL -n <path> Kills a process by its <path>.        *\n" + 
                                                 "* KILL -p <pid>  Kills a process by its <pid>.         *\n" + 
                                                 "* START <path>   Starts a process by its <path>.       *\n" + 
                                                 "* QUIT           Quits the application.                *\n" + 
