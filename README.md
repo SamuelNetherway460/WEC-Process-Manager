@@ -1,8 +1,13 @@
-# WEC-Process-Manager
+<h1 align="center">WEC Process Manager</h1>
+<h3 align="center">A simple C# command line application for viewing and managing processes in Windows Embedded Compact.</h3>
 
-![version](https://img.shields.io/github/v/release/SamuelNetherway460/WEC-Process-Manager?sort=semver)
-![platform](https://img.shields.io/badge/platform-Windows%20Embedded%20Compact-blue)
-![issues](https://img.shields.io/github/issues/SamuelNetherway460/WEC-Process-Manager)
-![downloads](https://img.shields.io/github/downloads/SamuelNetherway460/WEC-Process-Manager/total)
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/SamuelNetherway460/WEC-Process-Manager?sort=semver">
+  <img src="https://img.shields.io/github/last-commit/SamuelNetherway460/WEC-Process-Manager">
+  <img src="https://img.shields.io/badge/platform-Windows%20Embedded%20Compact-blue">
+  <img src="https://img.shields.io/github/issues/SamuelNetherway460/WEC-Process-Manager">
+  <img src="https://img.shields.io/github/downloads/SamuelNetherway460/WEC-Process-Manager/total">
+</p>
 
-A simple command line application for viewing and managing processes in Windows Embedded Compact.
+## Description
+Repository for a C# Windows Embedded Compact application used for viewing, killing and launching processes. Typically used as a management tool for debugging and investigation.
